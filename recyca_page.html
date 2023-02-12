@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Recyca</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            font-family: "Audiowide", sans-serif;
+
+
+            box-sizing: border-box;
+        }
+
+        .test{
+            width: 100%;
+            padding: 78px 0px;
+            background-image: url("static/background3.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+
+
+
+        .test-platform{
+            width: 550px;
+            padding: 50px;
+        }
+
+        .main{
+            width: 1130px;
+            max-width: 95%;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        .main .vid{
+            height: auto;
+            width: 500px;
+            border-radius: 10px;
+            border: 2px solid white;
+
+        }
+         .test-platform h1{
+            color: white;
+            font-size: 50px;
+            text-transform: capitalize;
+            margin-bottom: 20px;
+        }
+
+         .test-platform h1{
+            color: white;
+            font-size: 50px;
+            text-transform: capitalize;
+            margin-bottom: 20px;
+        }
+
+        .test-platform p{
+            color: white;
+            letter-spacing: 1px;
+            line-height: 28px;
+            font-size: 18px;
+            margin-bottom: 45px;
+        }
+
+        form .capture{
+            background: white;
+            color: black;
+            text-decoration: none;
+            border: 2px solid transparent;
+            font-weight: bold;
+            padding: 13px 30px;
+            border-radius: 30px;
+            transition: .4s;
+        }
+
+
+    </style>
+
+</head>
+<body>
+
+    <section class = "test">
+        <div class = "main">
+           <img class = 'vid' src="{{ url_for('video_feed') }}">
+
+            <div class = "test-platform">
+                <h1>Test Recyca</h1>
+
+                <p>Recyca lets the user capture a picture of a certain item that they want to throw out. The image is then sent into a convolutional neural network that categorically classifies the item that the user has shown. Based on this classification, the model determines what to do with the item. Using pyttsx3, the result of the model is spoken in a robotic voice.</p>
+
+                <form method = "post" action = "{{url_for('tasks')}}">
+                    <input class = 'capture' type = 'submit' value = 'Capture & Detect' name = 'click'/>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+</body>
+</html>
